@@ -8,7 +8,7 @@ const Home = () => {
   };
   return (
     <div>
-      <SearchBar searchMovie={(value) => searchTextHandler(value)} />
+      <SearchBar searchCountry={(value) => searchTextHandler(value)} />
       <List recentlySearch={searchedMovie} />
     </div>
   );

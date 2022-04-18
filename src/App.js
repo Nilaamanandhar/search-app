@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.scss";
 import SearchBar from "./components/SearchBar";
 import List from "./components/List";
-import  MovieDetail from "./components/MovieDetail";
+import CountryDetail from "./components/CountryDetail";
 import { BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from "./components/Home";
 
@@ -20,7 +20,7 @@ function App() {
 
       <Routes>
         <Route  path="/" element={<Home />} />
-        <Route  path="/moviedetail" element={<MovieDetail />} />
+        <Route  path="/countrydetail" element={<CountryDetail />} />
       </Routes>
     </div>
     </Router>

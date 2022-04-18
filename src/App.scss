@@ -37,3 +37,12 @@
     text-transform: capitalize;
   }
 }
+.card-item{
+  width: auto;
+  cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid blue;
+  margin-bottom:20px;
+}
