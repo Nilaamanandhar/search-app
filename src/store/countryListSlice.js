@@ -11,11 +11,14 @@ export const countryListSlice = createSlice({
     addCountryList: (state,action) => {
       state.countryList = action.payload
     },
+    searchCountryList:(state,action) => {
+      state.countryList = action.payload;
+    }
 
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addCountryList } = countryListSlice.actions
+export const { addCountryList ,searchCountryList} = countryListSlice.actions
 
 export default countryListSlice.reducer
