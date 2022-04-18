@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getCountriesList } from "../respositories/countries";
 const List = (props) => {
   console.log("props", props);
   let arrays = ["nilaa", "praful", "pratima", "sayami"];
-  const [movieList, setMovieList] = useState([]);
+  const [countriesList, setCountriesList] = useState([]);
   useEffect(() => {
-    console.log("arra", arrays, props);
     const array1 = arrays.filter((item) => {
       if (item.includes(props.recentlySearch)) {
         return item;
       }
     });
-    setMovieList(array1);
-    console.log("arrays", array1);
+    setCountriesList(array1);
+
   }, [props.recentlySearch]);
+
+  useEffect(() =>{
+    async function showListCountry(){
+      const listOfCountries= await getCountriesList();
+      console.log("listy",listOfCountries);
+    }
+    showListCountry();
+
+  },[])
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {console.log("movie", movieList)}
-      {movieList.length > 0 &&
-        movieList.map((item, index) => {
+      {countriesList.length > 0 &&
+        countriesList.map((item, index) => {
           return (
             <div
               key={index}
-              style={{
-                width: "auto",
-                cursor: "pointer",
-              }}
+            className="card-item"
             >
-              <Link to="/moviedetail">{item}</Link>
+              <Link to="/countrydetail">{item}</Link>
             </div>
           );
         })}

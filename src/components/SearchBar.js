@@ -2,8 +2,7 @@ import React, { useState } from "react";
 const SearchBar = (props) => {
   const [searchText, setSearchText] = useState();
   const searchTextHandler = () => {
-    console.log("eventer", searchText);
-    props.searchMovie(searchText);
+    props.searchCountry(searchText);
   };
   return (
     <div className="search-bar">
