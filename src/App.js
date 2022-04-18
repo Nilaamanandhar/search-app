@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import SearchBar from "./components/SearchBar";
 import List from "./components/List";
 import  MovieDetail from "./components/MovieDetail";
@@ -12,14 +12,8 @@ function App() {
   return (
     <Router>
     <div
-      style={{
-        display: "flex",
-        marginTop: "50px",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-      className="App"
+
+      className="main-wrapper"
     >
       {/* <SearchBar searchMovie={(value) => searchTextHandler(value)} />
       <List recentlySearch={searchedMovie} /> */}

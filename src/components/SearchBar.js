@@ -6,9 +6,8 @@ const SearchBar = (props) => {
     props.searchMovie(searchText);
   };
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div className="search-bar">
       <input
-        style={{ border: "1px solid black", height: "50px", width: "50vw" }}
         name="isGoing"
         type="text"
         onChange={(e) => {
@@ -17,7 +16,7 @@ const SearchBar = (props) => {
       />
       <div
         onClick={() => searchTextHandler()}
-        style={{ border: "1px solid black", width: "auto" }}
+        className="btn-wrapper"
       >
         search
       </div>
