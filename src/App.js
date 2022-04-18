@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import List from "./components/List";
+import  MovieDetail from "./components/MovieDetail";
+import { BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import Home from "./components/Home";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div
+      style={{
+        display: "flex",
+        marginTop: "50px",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+      className="App"
+    >
+      {/* <SearchBar searchMovie={(value) => searchTextHandler(value)} />
+      <List recentlySearch={searchedMovie} /> */}
+
+      <Routes>
+        <Route  path="/" element={<Home />} />
+        <Route  path="/moviedetail" element={<MovieDetail />} />
+      </Routes>
     </div>
+    </Router>
   );
 }
 
