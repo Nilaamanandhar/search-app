@@ -12,6 +12,10 @@ const SearchBar = (props) => {
         onChange={(e) => {
           setSearchText(e.target.value);
         }}
+        onKeyUp ={(e)=> {if(e.keyCode === 13){
+          searchTextHandler();
+        }}}
+        placeholder="Search Country"
       />
       <div
         onClick={() => searchTextHandler()}
