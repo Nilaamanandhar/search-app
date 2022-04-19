@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   countryList: [],
+  selectedCountry:""
 }
 
 export const countryListSlice = createSlice({
@@ -11,14 +12,15 @@ export const countryListSlice = createSlice({
     addCountryList: (state,action) => {
       state.countryList = action.payload
     },
-    searchCountryList:(state,action) => {
-      state.countryList = action.payload;
-    }
+    setSelectedCountry: (state,action) => {
+      state.selectedCountry = action.payload
+    },
+
 
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addCountryList ,searchCountryList} = countryListSlice.actions
+export const { addCountryList ,setSelectedCountry} = countryListSlice.actions
 
 export default countryListSlice.reducer

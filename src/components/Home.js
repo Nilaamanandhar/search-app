@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import List from "./List";
 const Home = () => {
-  const [searchedMovie, setSearchedMovie] = useState("");
+  const [searchedCountry, setSearchedCountry] = useState("");
   const searchTextHandler = (value) => {
-    setSearchedMovie(value);
+    setSearchedCountry(value);
   };
   return (
-    <div>
+    <div className="home-wrapper">
       <SearchBar searchCountry={(value) => searchTextHandler(value)} />
-      <List recentlySearch={searchedMovie} />
+      <List recentlySearch={searchedCountry} />
     </div>
   );
 };
